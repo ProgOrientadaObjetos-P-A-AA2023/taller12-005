@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete02;
 
 import java.util.ArrayList;
 import paquete01.Televisor;
+import paquete03.VentasTvs;
 
-/**
- *
- * @author reroes
- */
 public class Principal {
     
     public static void main(String[] args) {
@@ -32,9 +24,20 @@ public class Principal {
         tvs.add(t1);
         tvs.add(t2);
         tvs.add(t3);
+        
+        VentasTvs ventasTvs = new VentasTvs();
+        ventasTvs.establecerTelevisores(tvs);
+        ventasTvs.establecerPrecioTotal();
+        ventasTvs.establecerPrecioMasAlto();
+        ventasTvs.establecerMarcasVendidas();
+        
         System.out.println("-----------------");
-        System.out.printf("%.2f\n", t1.totalPrecioTvs(tvs));
-        // System.out.printf("%s\n", t1.listaMarcasVendidas(tvs));
+        System.out.printf("\nMarcas mas vendidas:\n%s\n",
+                ventasTvs.obtenerMarcasVendidas());
+        System.out.printf("\nPrecio mas alto: %.2f\n", 
+                ventasTvs.obtenerPrecioMasAlto());
+                System.out.printf("\nPrecio Total: %.2f\n", 
+                        ventasTvs.obtenerPrecioTotal());
 
     }
 }
